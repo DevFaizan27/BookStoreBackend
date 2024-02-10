@@ -4,6 +4,7 @@ import connectToMongo from "./database/db.js";
 import bookRoute from './routes/bookRoute.js';
 import userRoute from './routes/userRoute.js';
 import cors from 'cors';
+import corsMiddleware from "./middleware/corsMiddleware.js";
 
 
 const app=express();
@@ -15,7 +16,8 @@ connectToMongo()
 app.use(express.json())
 
 //middleware to handle cors policy
-app.use(cors())
+// app.use(cors())
+app.use(corsMiddleware())
 // app.use(cors({
 //     origin:'http://localhost:5173',
 //     methods:['GET' ,' POST','PUT','DELETE'],
