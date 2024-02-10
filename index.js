@@ -4,8 +4,6 @@ import connectToMongo from "./database/db.js";
 import bookRoute from './routes/bookRoute.js';
 import userRoute from './routes/userRoute.js';
 import cors from 'cors';
-import corsMiddleware from "./middleware/corsMiddleware.js";
-
 
 const app=express();
 
