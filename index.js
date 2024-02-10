@@ -17,17 +17,12 @@ app.use(express.json())
 
 //middleware to handle cors policy
 // app.use(cors())
-app.use(corsMiddleware())
-// app.use(cors({
-//     origin:'http://localhost:5173',
-//     methods:['GET' ,' POST','PUT','DELETE'],
-//     allowedHeaders:['Content-Type'],
-// }))
+
 
 //available book routes r
-app.use('/books',bookRoute)
+app.use('/books',cors(),bookRoute)
 //user routes
-app.use('/user',userRoute)
+app.use('/user',cors(),userRoute)
 
 app.listen(process.env.PORT,()=>{
     console.log(`App Listining to port :${process.env.PORT}`);
